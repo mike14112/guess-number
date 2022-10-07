@@ -1,0 +1,95 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+body{
+    background-image: url(img/bg.png);
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+header{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
+
+}
+
+
+.btn_again{
+    border-style: none;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
+    cursor: pointer;
+  
+}
+
+.main_container{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.winner_number_area{
+    margin-top: 2rem;
+    border: solid white ;
+    background-color: white;
+     width: 100%;
+}
+
+.place_winner_number{
+    color:black;
+    margin-left: 50%;
+}
+
+
+.input_area{
+    display: flex;
+    flex-direction: column;
+}
+.total_area{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bolder;;
+    font-size: 24px;
+    color:white;
+}
+.input_number{
+    border:none;
+    padding: 3rem;
+    font-size: 34px;
+
+}
+
+.btn_add{
+    border-style: none;
+    font-weight: bolder;
+    color:white;
+    font-size: 24px;
+    background-color:black;
+    cursor: pointer;
+}
+.winner_total{
+    display: flex;
+    flex-direction: column;
+ }
+.start_guessing_place{
+    margin-bottom: 2rem;
+}
+.attempts_area{
+    margin-bottom: 2rem;
+}
+

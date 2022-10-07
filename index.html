@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>guess the number</title>
+</head>
+<div>
+  <header>
+  <div class="again_area">
+    <button class="btn_again">Again!</button>
+  </div>
+    <div class="beetween_area">
+        <span>between (0-20)</span>
+    </div>
+  </header>
+  <div class="main_container">
+    <div class="gueess_number">
+     <span>Guess The Number</span>
+    </div>
+    <div class="winner_number_area">
+     <span class="place_winner_number">???</span>
+    </div>
+  </div>
+    <div class="total_area">
+        <div class="input_area">
+          <form action="#">
+            <input type="number" class="input_number" min="1" max="20">
+            <button class="btn_add">Check</button>
+          </form>
+        </div>
+        <div class="guessin_area">
+            <div class="winner_total">
+                <span class="start_guessing_place"> Start Guessing Number</span>
+               </div>
+               <div class="attempts_area">
+                <span class="attempts_place" value = '20'> attepts: <span class="counter">20</span>   </span>
+               </div>
+               <div class="best_result_area">
+                <span class="best_result_place">results: 0</span>
+               </div>
+            </div>
+        </div>
+   
+    <script src="app.js"></script>
+</body>
+</html>

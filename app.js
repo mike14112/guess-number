@@ -8,6 +8,9 @@ let  btnAgain = document.querySelector('.btn_again'),
      numberRandom = randomNumber(),
      inputValuePerson = 0,
      count = 20;
+    
+
+
 
       function  randomNumber (){
 
@@ -18,25 +21,27 @@ let  btnAgain = document.querySelector('.btn_again'),
 
      console.log(numberRandom)
 
+ 
+    
+
 
 
      
-const resetGame = function (a){ 
-    btnAgain.addEventListener('click', () =>{
+function resetGame  (){ 
+        btnAgain.addEventListener('click', () =>{
         inputNumber.value = '';
         placeWinner.innerHTML = `???`;
-        counter.innerHTML = ` 20`;
+        counter.innerHTML = `${count = 20}`;
         gusseinAnswers.innerHTML = 'Start Guessing Number';
-      numberRandom = randomNumber();
+        numberRandom = randomNumber();
+        console.log(randomNumber())
       
-      console.log(numberRandom);
     });
       
     };
 
+ 
 
- 
- 
      const startGame = function(){
         
    btnAdd.addEventListener('click', () =>{
@@ -45,39 +50,34 @@ const resetGame = function (a){
         
     
     }
-    if( numberRandom === inputValuePerson){
+    if( numberRandom == inputValuePerson){
         placeWinner.innerHTML = `${inputValuePerson} Winner`;
         gusseinAnswers.innerHTML = `Winned`;
         bestResult.innerHTML = `result: ${count}`;
-
-
+        resetGame()
+    } else if(inputValuePerson < numberRandom && inputValuePerson != numberRandom && count != 0 ){
+      gusseinAnswers.innerHTML = 'less';
+      counter.innerHTML = `${count--}`;
+    }else if(inputValuePerson > numberRandom && inputValuePerson != numberRandom && count != 0){
+      gusseinAnswers.innerHTML = 'Over';
+      counter.innerHTML = `${count--}`;
     }
-    if (inputValuePerson < numberRandom){
-        gusseinAnswers.innerHTML = `very little`;         
+    if(count == 0 ){
+    gusseinAnswers.innerHTML ='You Loose';
+    counter.innerHTML = '0'
     }
-     if (inputValuePerson < numberRandom){
-        gusseinAnswers.innerHTML = `one too many`;
-    }
-    
 
-    if(inputValuePerson != numberRandom){
-        counter.innerHTML = `${count--}`;
-    }
-    if(count == 0){
-        gusseinAnswers.innerHTML = `You loose!`;
-      
-        inputNumber.value = '';
-        count = 20;
-      
-        counter.innerHTML = `${count}`;
-      
-     }
-
-  
 });
   };
+ 
+
+
 
 
 startGame();
 
 resetGame();
+
+
+
+

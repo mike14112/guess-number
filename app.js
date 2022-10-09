@@ -19,7 +19,7 @@ let  btnAgain = document.querySelector('.btn_again'),
           return numberRandom;
      };
 
-     console.log(numberRandom)
+     console.log(numberRandom);
 
  
     
@@ -30,11 +30,11 @@ let  btnAgain = document.querySelector('.btn_again'),
 function resetGame  (){ 
         btnAgain.addEventListener('click', () =>{
         inputNumber.value = '';
-        placeWinner.innerHTML = `???`;
-        counter.innerHTML = `${count = 20}`;
-        gusseinAnswers.innerHTML = 'Start Guessing Number';
+        placeWinner.textContent.innerHTML = `???`;
+        counter.textContent.innerHTML = `${count = 20}`;
+        gusseinAnswers.textContent.innerHTML = 'Start Guessing Number';
         numberRandom = randomNumber();
-        console.log(randomNumber())
+        console.log(randomNumber());
       
     });
       
@@ -51,20 +51,20 @@ function resetGame  (){
     
     }
     if( numberRandom == inputValuePerson){
-        placeWinner.innerHTML = `${inputValuePerson} Winner`;
-        gusseinAnswers.innerHTML = `Winned`;
-        bestResult.innerHTML = `result: ${count}`;
+        placeWinner.textContent.innerHTML = `${inputValuePerson} Winner`;
+        gusseinAnswers.textContent.innerHTML = `Winned`;
+        bestResult.textContent.innerHTML = `result: ${count}`;
         resetGame()
     } else if(inputValuePerson < numberRandom && inputValuePerson != numberRandom && count != 0 ){
-      gusseinAnswers.innerHTML = 'less';
+      gusseinAnswers.textContent.innerHTML = 'less';
       counter.innerHTML = `${count--}`;
     }else if(inputValuePerson > numberRandom && inputValuePerson != numberRandom && count != 0){
-      gusseinAnswers.innerHTML = 'Over';
+      gusseinAnswers.textContent.innerHTML = 'Over';
       counter.innerHTML = `${count--}`;
     }
     if(count == 0 ){
-    gusseinAnswers.innerHTML ='You Loose';
-    counter.innerHTML = '0'
+    gusseinAnswers.textContent.innerHTML ='You Loose';
+    counter.textContent.innerHTML = '0';
     }
 
 });

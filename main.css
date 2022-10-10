@@ -5,7 +5,7 @@
 
 body{
     background-image: url(img/bg.png);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
@@ -93,12 +93,8 @@ header{
     margin-bottom: 2rem;
 }
 
-@media screen and (max-width:768px) {
-    body{
-        display: flex;
-        flex-direction: column;
-    }
-
+@media screen and (width:768px) {
+ 
    .total_area{
     margin-top: 2rem;
     display: flex;

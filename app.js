@@ -39,5 +39,4 @@ btnAgainGame.addEventListener("click", function () {
   document.querySelector(".input_number").value = "";
   score = 20;
   document.querySelector(".counter").textContent = score;
-  console.log(secretNumber);
 });

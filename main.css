@@ -5,7 +5,7 @@
 
 body{
     background-image: url(img/bg.png);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
@@ -19,6 +19,7 @@ header{
     color: white;
     font-weight: bolder;
     font-size: 24px;
+    padding-top: 1rem;
 
 }
 
@@ -60,9 +61,9 @@ header{
     flex-direction: column;
 }
 .total_area{
-    margin-top: 10rem;
+    margin-top: 4rem;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     font-weight: bolder;;
     font-size: 24px;
     color:white;
@@ -86,25 +87,17 @@ header{
     display: flex;
     flex-direction: column;
  }
-.start_guessing_place{
-    margin-bottom: 2rem;
-}
-.attempts_area{
-    margin-bottom: 2rem;
+
+
+.guessin_area{
+  padding: 1rem;
 }
 
-@media screen and (max-width:768px) {
-    body{
+@media screen and (width:768px) {
+    .total_area{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
-
-   .total_area{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-   }
- 
    .guessin_area{
     margin-top: 2rem;
    }
@@ -112,4 +105,5 @@ header{
      
         width: 47rem;
     }
+
 }

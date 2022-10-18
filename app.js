@@ -1,83 +1,43 @@
-let  btnAgain = document.querySelector('.btn_again'),
-     btnAdd = document.querySelector('.btn_add'),
-     inputNumber = document.querySelector('.input_number'),
-     placeWinner = document.querySelector('.place_winner_number'),
-     counter = document.querySelector('.counter'),
-     gusseinAnswers = document.querySelector('.start_guessing_place'),
-     bestResult = document.querySelector('.best_result_place'),
-     numberRandom = randomNumber(),
-     inputValuePerson = 0,
-     count = 20;
-    
+const btnCheck = document.querySelector(".btn_add"),
+  btnAgainGame = document.querySelector(".btn_again");
 
+let secretNumber = Math.trunc(Math.random() * 20) + 1,
+  score = 20,
+  highScore = 0;
 
+function displayGuessMessage(meesage) {
+  document.querySelector(".start_guessing_place").textContent = meesage;
+}
 
-      function  randomNumber (){
+btnCheck.addEventListener("click", function () {
+  const inputNumber = Number(document.querySelector(".input_number").value);
 
-        let   numberRandom = Math.floor(Math.random() * 20);
-
-          return numberRandom;
-     };
-
-     console.log(numberRandom);
-
- 
-    
-
-
-
-     
-function resetGame  (){ 
-        btnAgain.addEventListener('click', () =>{
-        inputNumber.value = '';
-        placeWinner.textContent.innerHTML = `???`;
-        counter.textContent.innerHTML = `${count = 20}`;
-        gusseinAnswers.textContent.innerHTML = 'Start Guessing Number';
-        numberRandom = randomNumber();
-        console.log(randomNumber());
-      
-    });
-      
-    };
-
- 
-
-     const startGame = function(){
-        
-   btnAdd.addEventListener('click', () =>{
-    if(inputNumber.value != '' ){
-        inputValuePerson = +inputNumber.value;
-        
-    
+  if (!inputNumber) {
+    displayGuessMessage("Please write to Number");
+  }
+  if (inputNumber === secretNumber) {
+    displayGuessMessage("Correctly!");
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(
+        ".best_result_place"
+      ).textContent = `results:${highScore}`;
     }
-    if( numberRandom == inputValuePerson){
-        placeWinner.textContent.innerHTML = `${inputValuePerson} Winner`;
-        gusseinAnswers.textContent.innerHTML = `Winned`;
-        bestResult.textContent.innerHTML = `result: ${count}`;
-        resetGame()
-    } else if(inputValuePerson < numberRandom && inputValuePerson != numberRandom && count != 0 ){
-      gusseinAnswers.textContent.innerHTML = 'less';
-      counter.innerHTML = `${count--}`;
-    }else if(inputValuePerson > numberRandom && inputValuePerson != numberRandom && count != 0){
-      gusseinAnswers.textContent.innerHTML = 'Over';
-      counter.innerHTML = `${count--}`;
-    }
-    if(count == 0 ){
-    gusseinAnswers.textContent.innerHTML ='You Loose';
-    counter.textContent.innerHTML = '0';
-    }
-
+  } else if (inputNumber !== secretNumber && score !== 0) {
+    displayGuessMessage(inputNumber > secretNumber ? "To High" : "To Low");
+    score--;
+    document.querySelector(".counter").textContent = score;
+  } else {
+    displayGuessMessage("Game Over!");
+    document.querySelector(".counter").textContent = 0;
+  }
 });
-  };
- 
 
-
-
-
-startGame();
-
-resetGame();
-
-
-
-
+btnAgainGame.addEventListener("click", function () {
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  displayGuessMessage("Start Guess Message!");
+  document.querySelector(".input_number").value = "";
+  score = 20;
+  document.querySelector(".counter").textContent = score;
+  console.log(secretNumber);
+});
